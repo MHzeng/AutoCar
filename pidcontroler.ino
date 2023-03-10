@@ -5,7 +5,7 @@ void motor_pidController(MOTOR *motor)  //电机1pid控制 输入期望速度与
   float Kp=7;
   float Ti=40;
   float Td=100;
-  eI=motor->target-motor->velocity;
+  motor->eI=motor->target-motor->velocity;
   float T=PERIOD;
   float q0=Kp*(1+T/Ti+Td/T);
   float q1=-Kp*(1+2*Td/T);

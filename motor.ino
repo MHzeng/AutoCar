@@ -80,7 +80,7 @@ t2 = motor2.target;
   motor2.velocity=0;
 
 //通过期望速度与当前速度计算控制量，并通过控制量调整电机转速
-  motor_pidController(*motor1);
+  motor_pidController(&motor1);
   // Serial.println(output);
   if(motor1.output>0)
   {
@@ -94,7 +94,7 @@ t2 = motor2.target;
     digitalWrite(INL1b,LOW);
     analogWrite(PWM1,abs(motor1.output)); 
   }
-  motor_pidController(*motor2);
+  motor_pidController(&motor2);
   if(motor2.output>0)
   {
     digitalWrite(INL2a,LOW);

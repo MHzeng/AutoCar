@@ -37,4 +37,14 @@ typedef struct
   int output;
 } MOTOR;
 
+struct
+{
+  float eI;
+  float eII;
+  float eIII;
+  float target;
+  float u;
+  float output;
+} track;
+
 #endif
