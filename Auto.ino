@@ -61,8 +61,8 @@ pinMode(INL2b, OUTPUT);
 
 void loop() {
   // put your main code here, to run repeatedly:
-// Serial.print(motor1.velocity); Serial.print("\t");
-// Serial.println(motor2.velocity);
+ Serial.print(motor1.target); Serial.print("\t");
+ Serial.println(motor2.target);
 // Serial.print("\t");
 //Serial.print("\n");
 //Serial.println(u2);
