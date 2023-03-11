@@ -24,11 +24,11 @@ void motor_pidController(MOTOR *motor)  //电机1pid控制 输入期望速度与
   motor->output=motor->u;
   
 }
-void track_pidController2()//电机2pid控制 输入期望速度与当前速度返回控制量
+void track_pidController2()//寻线的pid控制
 {
   float Kp=1;
   float Ti=500;
-  float Td=0.01;
+  float Td=0;
   float T=PERIOD;
   float q0=Kp*(1+T/Ti+Td/T);
   float q1=-Kp*(1+2*Td/T);

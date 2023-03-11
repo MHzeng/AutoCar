@@ -23,28 +23,10 @@
 
 
 #define PERIOD 10 //控制周期
-#define V 15 //参考速度
+#define V 10 //参考速度
 
-typedef struct 
-{
-  float eI;
-  float eII;
-  float eIII;
-  volatile long encoderVal; 
-  float velocity;
-  float target;
-  float u;
-  int output;
-} MOTOR;
 
-struct
-{
-  float eI;
-  float eII;
-  float eIII;
-  float target;
-  float u;
-  float output;
-} track;
+
+
 
 #endif

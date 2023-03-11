@@ -1,6 +1,27 @@
 #include<MsTimer2.h>
 #include"const.h"
 
+typedef struct 
+{
+  float eI;
+  float eII;
+  float eIII;
+  volatile long encoderVal; 
+  float velocity;
+  float target;
+  float u;
+  int output;
+} MOTOR;
+
+struct
+{
+  float eI;
+  float eII;
+  float eIII;
+  float target;
+  float u;
+  float output;
+} track;
 
 MOTOR motor1,motor2;
 
@@ -40,8 +61,8 @@ pinMode(INL2b, OUTPUT);
 
 void loop() {
   // put your main code here, to run repeatedly:
-Serial.print(motor1.velocity); Serial.print("\t");
-Serial.println(motor2.velocity);
+// Serial.print(motor1.velocity); Serial.print("\t");
+// Serial.println(motor2.velocity);
 // Serial.print("\t");
 //Serial.print("\n");
 //Serial.println(u2);

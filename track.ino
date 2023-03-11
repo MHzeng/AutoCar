@@ -4,6 +4,8 @@
 
 void Track()
 {
+  // motor1.target=V;
+  // motor2.target=V;
   int i,j;
   int pin[8];
   int pin_statu[8];
@@ -36,4 +38,8 @@ void Track()
   track_pidController2();
   motor1.target=track.output*V*0.1;
   motor2.target=-track.output*V*0.1;
+  Serial.println(track.eI);
+  //Serial.print("\t");
+  //Serial.println(motor2.target);
+
 }

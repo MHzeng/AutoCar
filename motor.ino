@@ -2,11 +2,7 @@
 
 int t1 = V, t2 = V;
 
-volatile long encoderVal1;  
-volatile long encoderVal2;
 
-float velocity1;
-float velocity2;
 
 void getEncoder1(void)  //电机1编码器读取
 {
@@ -63,6 +59,7 @@ void getEncoder2(void)//电机2编码器读取
 
 void control(void) //读取红外探测器 获得期望速度
 {
+Track();
   
 
 
@@ -70,14 +67,19 @@ motor1.target = motor1.target * 0.7 + t1 * 0.3;
 
 motor2.target = motor2.target * 0.7 + t2 * 0.3;
 
+t1=motor1.target;
+t2=motor2.target;
+
 t1 = motor1.target;
 t2 = motor2.target;
 
 //通过编码器值计算电当前速度，并将编码器值归零
   motor1.velocity=(motor1.encoderVal/780.0)*3.1415*2.0*(1000/PERIOD);
-  motor1.velocity=0; 
+
+  motor1.encoderVal=0; 
   motor2.velocity=(motor2.encoderVal/780.0)*3.1415*2.0*(1000/PERIOD);
-  motor2.velocity=0;
+
+  motor2.encoderVal=0;
 
 //通过期望速度与当前速度计算控制量，并通过控制量调整电机转速
   motor_pidController(&motor1);
