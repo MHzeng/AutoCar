@@ -59,19 +59,52 @@ void getEncoder2(void)//电机2编码器读取
 
 void control(void) //读取红外探测器 获得期望速度
 {
-Track();
+cnt++;
+if(cnt==100)
+{
+  servo2.write(90);
+}
+if(cnt==200)
+{
+  servo1.write(55);
+}
+if(cnt==300)
+{
+  servo2.write(135);
+}
+if(cnt==400)
+{
+  servo1.write(90);
+}
+if(cnt>=500)
+{
+// if(detectstatu==1)
+// {
+//   ultrasonic();
+// }
+if(stopstatu==1)
+{
+  End();
+}
+if(stopstatu==0&&avoidstatu==0)
+{
+  Track();
+  motor1.target = motor1.target * 0.6 + t1 * 0.4;
+  motor2.target = motor2.target * 0.6 + t2 * 0.4;
+}
+// if(avoidstatu==1)
+// {
+//   Avoid();
+// }
   
+// motor1.target=0.5*V;
+// motor2.target=0.5*V;
 
 
-motor1.target = motor1.target * 0.7 + t1 * 0.3;
-
-motor2.target = motor2.target * 0.7 + t2 * 0.3;
 
 t1=motor1.target;
 t2=motor2.target;
 
-t1 = motor1.target;
-t2 = motor2.target;
 
 //通过编码器值计算电当前速度，并将编码器值归零
   motor1.velocity=(motor1.encoderVal/780.0)*3.1415*2.0*(1000/PERIOD);
@@ -109,5 +142,6 @@ t2 = motor2.target;
     digitalWrite(INL2b,LOW);
     analogWrite(PWM2,abs(motor2.output));    
   }
+}
 }
 
