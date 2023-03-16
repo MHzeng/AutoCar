@@ -79,13 +79,11 @@ void Track()
   {
     motor1.target=0*V;
     motor2.target=0.65*V;
-    lastpin=0;
   }
   if (pin_statu[8]) //直角右转
   {
     motor1.target=0.65*V;
     motor2.target=0*V;
-    lastpin=8;
   }
   }
 

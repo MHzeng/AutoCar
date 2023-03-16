@@ -21,8 +21,6 @@
 #define INL1b 22
 #define INL2a 25
 #define INL2b 24
-#define TrigPin 32
-#define EchoPin 33
 #define PIN_SERVO1 12 //下面
 #define PIN_SERVO2 11 //夹爪
 

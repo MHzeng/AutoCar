@@ -78,33 +78,21 @@ if(cnt==400)
 }
 if(cnt>=500)
 {
-// if(detectstatu==1)
-// {
-//   ultrasonic();
-// }
 if(stopstatu==1)
 {
   End();
 }
-if(stopstatu==0&&avoidstatu==0)
+if(stopstatu==0)
 {
   Track();
   motor1.target = motor1.target * 0.6 + t1 * 0.4;
   motor2.target = motor2.target * 0.6 + t2 * 0.4;
 }
-// if(avoidstatu==1)
-// {
-//   Avoid();
-// }
-  
 // motor1.target=0.5*V;
 // motor2.target=0.5*V;
 
-
-
 t1=motor1.target;
 t2=motor2.target;
-
 
 //通过编码器值计算电当前速度，并将编码器值归零
   motor1.velocity=(motor1.encoderVal/780.0)*3.1415*2.0*(1000/PERIOD);

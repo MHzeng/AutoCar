@@ -16,19 +16,10 @@ typedef struct
 volatile long cnt=0;
 
 int stopstatu=0;
-int avoidstatu=0;
-int detectstatu=1;
 
 long stopcnt;
-long detectcnt;
-
-int lastpin;
-
-int cm=100;
 
 MOTOR motor1,motor2;
-
-
 
 void setup() {
 //初始化串口通讯
@@ -59,9 +50,6 @@ pinMode(INL1a, OUTPUT);
 pinMode(INL1b, OUTPUT);
 pinMode(INL2a, OUTPUT);
 pinMode(INL2b, OUTPUT);
-
-pinMode(TrigPin, OUTPUT);
-pinMode(EchoPin, INPUT);
 
 servo1.attach(PIN_SERVO1);
 servo2.attach(PIN_SERVO2);
