@@ -74,7 +74,7 @@ if(cnt==300)
 }
 if(cnt==400)
 {
-  servo1.write(90);
+  servo1.write(120);
 }
 if(cnt>=500)
 {

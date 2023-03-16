@@ -47,23 +47,23 @@ void Track()
   }
   if (pin_statu[3]) //低左转
   {
-    motor1.target=0.5*V;
+    motor1.target=0.75*V;
     motor2.target=0.9*V;
   }
   if (pin_statu[5]) //低右转
   {
     motor1.target=0.9*V;
-    motor2.target=0.5*V;
+    motor2.target=0.75*V;
   }
   if (pin_statu[2]) //中左转
   {
-    motor1.target=0.15*V;
+    motor1.target=0.45*V;
     motor2.target=0.75*V;
   }
   if (pin_statu[6]) //中右转
   {
     motor1.target=0.75*V;
-    motor2.target=0.15*V;
+    motor2.target=0.45*V;
   }
   if (pin_statu[1]) //high左转
   {
